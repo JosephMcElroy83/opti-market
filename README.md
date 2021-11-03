@@ -1,6 +1,6 @@
 ## Overview
 
-_**Opti-Market** Taking quick and simple to the next level with simplified shopping experience. Ever want to just be able to jump right into selling a product without the hassal? You can reach a userbase with opti-market to get your products out with ease and let people explore and find your business in the way you intended.
+**Opti-Market** Taking quick and simple to the next level with simplified shopping experience. Ever want to just be able to jump right into selling a product without the hassal? You can reach a userbase with opti-market to get your products out with ease and let people explore and find your business in the way you intended.
 
 
 <br>
@@ -23,7 +23,6 @@ The **Opti-Market** MVP
 - Ability to build cart system
 - Build sale sets with culmination of price/sales
 - featured banner of top viewed sales/business features
-- _etc._
 
 <br>
 
@@ -33,11 +32,9 @@ The **Opti-Market** MVP
 
 |     Library      | Description                                |
 | :--------------: | :----------------------------------------- |
-|      React       | _Lorem ipsum dolor sit amet, consectetur._ |
-|   React Router   | _Lorem ipsum dolor sit amet, consectetur._ |
-| React SemanticUI | _Lorem ipsum dolor sit amet, consectetur._ |
-|     Express      | _Lorem ipsum dolor sit amet, consectetur._ |
-|  Express Router  | _Lorem ipsum dolor sit amet, consectetur._ |
+|      React       | Component framework |
+|   React Router   | Control component routings for view        |
+|     Express      | Backend API |
 
 <br>
 
@@ -73,9 +70,7 @@ The **Opti-Market** MVP
 
 #### Component Tree
 
-> Use this section to display the structure of how your React components are being rendered. This should show the parent to child relation between you components. In other words, show which components are rendering the other components. Include a link to your component tree
-
-[Component Tree Sample](https://gist.git.generalassemb.ly/davidtwhitlatch/414107e2560ae0bb65e233570f2fe056#file-component-tree-png)
+[Component Tree Sample](https://res.cloudinary.com/jm83/image/upload/v1635961653/Screen_Shot_2021-11-03_at_1.45.15_PM_wfqvxm.png)
 
 #### Component Architecture
 
