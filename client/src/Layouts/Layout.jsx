@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import HamMenu from '..Components/HamMenu.jsx'
+import HamMenu from '../Components/HamMenu.jsx'
 
 export default function Layout(props) {
   const { children, currentUser, handleLogout } = props
