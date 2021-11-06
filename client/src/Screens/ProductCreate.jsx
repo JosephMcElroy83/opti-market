@@ -10,8 +10,8 @@ export default function ProductCreate(props) {
     saleValue: 0,
     image: "",
   });
-  const { title, description, price, image, category_id, isFeatured, saleValue } = formData;
-  const { newProduct } = props;
+  const { title, description, price, image, isFeatured, saleValue } = formData;
+  const { newProduct, categories } = props;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -59,19 +59,18 @@ export default function ProductCreate(props) {
           />
         </label>
         <br />
-        <label>
-          Product's Category:
-            <input
-            type="text"
-            name="category_id"
-            value={category_id}
-            onChange={handleChange}
-          />
-        </label>
+        <select onChange={handleChange} name="category_id" defaultValue='default'>
+          <option disabled value='default'>
+            -- Select a Category --
+          </option>
+          {categories.map((cat) => (
+            <option value={cat.id}>{cat.title}</option>
+          ))}
+        </select>
         <label>
           Product's Price:
             <input
-            type="text"
+            type="number"
             name="price"
             value={price}
             onChange={handleChange}
@@ -81,7 +80,7 @@ export default function ProductCreate(props) {
         <label>
           Product Featured:
             <input
-            type="text"
+            type="bool"
             name="isFeatured"
             value={isFeatured}
             onChange={handleChange}
@@ -91,7 +90,7 @@ export default function ProductCreate(props) {
         <label>
           Product's Sale Percent:
             <input
-            type="text"
+            type="number"
             name="saleValue"
             value={saleValue}
             onChange={handleChange}
