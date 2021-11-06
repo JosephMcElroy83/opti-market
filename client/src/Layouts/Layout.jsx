@@ -7,7 +7,9 @@ export default function Layout(props) {
   return (
     <div>
       <header>
+        <Link to="/">
         <h1>Opti-Market</h1>
+        </Link>
         {currentUser ? (
           <div>
             <p>{currentUser.username}</p>
