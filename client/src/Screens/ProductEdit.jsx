@@ -12,7 +12,7 @@ export default function ProductEdit(props) {
     image: "",
   })
   const { title, description, image, category_id, price, isFeatured, saleValue } = formData;
-  const { editProduct } = props;
+  const { editProduct, categories } = props;
   const { id } = useParams();
   const history = useHistory();
 
@@ -81,19 +81,15 @@ export default function ProductEdit(props) {
           />
         </label>
         <br />
-        <label>
-          Product's Category:
-            <input
-            type="text"
-            name="category_id"
-            value={category_id}
-            onChange={handleChange}
-          />
-        </label>
+        <select onChange={handleChange} name="category_id" value={category_id}>
+          {categories.map((cat) => (
+            <option value={cat.id}>{cat.title}</option>
+          ))}
+        </select>
         <label>
           Product's Price:
             <input
-            type="text"
+            type="number"
             name="price"
             value={price}
             onChange={handleChange}
@@ -113,7 +109,7 @@ export default function ProductEdit(props) {
         <label>
           Product's Sale Percent:
             <input
-            type="text"
+            type="number"
             name="saleValue"
             value={saleValue}
             onChange={handleChange}
