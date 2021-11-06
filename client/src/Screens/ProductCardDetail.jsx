@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react';
-import { Link, Route, useParams } from 'react-router-dom';
-import ProductEdit from '../Screens/ProductEdit'
+import { Link, useParams } from 'react-router-dom';
 
 export default function ProductCardDetail(props) {
-  const [product, setProduct] = useState([]);
+  const [product, setProduct] = useState(null);
   const { id } = useParams();
-  const { products, deleteProduct, editProduct, currentUser } = props;
+  const { products, deleteProduct } = props;
 
   useEffect(() => {
     if (products.length) {
@@ -27,15 +26,15 @@ export default function ProductCardDetail(props) {
                 e.target.src = 'https://www.eguardtech.com/wp-content/uploads/2018/08/Network-Profile.png'
               }}
             />
-                <div>
+            <div>
                 <h2>{product.title}</h2>
                 <h2>{product.description}</h2>
+                <h2>{product.category.title}</h2>
                 <h2>{product.price}</h2>
                 <h2>{product.isFeatured}</h2>
                 <h2>{product.saleValue}</h2>
-                <h2>{product.category}</h2>
             </div>
-            {(props.currentUser.id === product.user_id) && 
+            {(props.currentUser?.id === product.user_id) && 
             <div>
               <Link to={`/${id}/edit`}>
                 Edit
