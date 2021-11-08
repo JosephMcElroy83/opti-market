@@ -32,6 +32,7 @@ export default function Register(props) {
             type="text"
             value={username}
             onChange={handleChange}
+            autoFocus
           />
         </label>
         <label>
