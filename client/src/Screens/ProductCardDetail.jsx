@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import '../styling/ProductCardDetail.css'
 
 export default function ProductCardDetail(props) {
   const [product, setProduct] = useState(null);
@@ -17,29 +18,35 @@ export default function ProductCardDetail(props) {
     <div className="product-page">
       {
         product ? (
-          <div>
-            <img
-              alt={product.title}
-              src={product.image}
-              onError={(e) => {
+          <div className="product-container">
+            <div className="image-title-description">
+              <img
+                style={{ width: "40vw"}}
+                className="prod-image"
+                alt={product.title}
+                src={product.image}
+                onError={(e) => {
                 e.target.onerror = null;
                 e.target.src = 'https://www.eguardtech.com/wp-content/uploads/2018/08/Network-Profile.png'
               }}
-            />
-            <div>
-                <h2>{product.title}</h2>
-                <h2>{product.description}</h2>
-                <h2>{product.category.title}</h2>
-                <h2>{product.price}</h2>
-                <h2>{product.isFeatured}</h2>
-                <h2>{product.saleValue}</h2>
+              />
+              <div className="title-description-div">
+                  <h2>Title: {product.title}</h2>
+                  <h2>Description: {product.description}</h2>
+              </div>
             </div>
+              <div className="information-container">
+                <h2>Category: {product.category.title}</h2>
+                <h2>Price ${product.price}</h2>
+              {product.saleValue !== 0 ? <h2>Sale: {product.saleValue}%</h2> : <p></p>}
+            </div>
+            <hr />
             {(props.currentUser?.id === product.user_id) && 
-            <div>
-              <Link to={`/${id}/edit`}>
+              <div className="edit-link">
+              <Link className="edit-btn" to={`/${id}/edit`}>
                 Edit
               </Link>
-              <button onClick={() => deleteProduct(id)}>
+              <button className="delete-btn" onClick={() => deleteProduct(id)}>
                 Delete
               </button>
              </div>
