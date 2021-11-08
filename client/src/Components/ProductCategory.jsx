@@ -1,4 +1,5 @@
 import React from 'react'
+import '../styling/ProductCategory.css'
 
 export default function ProductCategory(props) {
   const { categories, setCategory } = props
@@ -9,7 +10,10 @@ export default function ProductCategory(props) {
 
   return (
     <div className="category-container">
-      Category
+      <p className="category-title">Category</p>
+        <div className="category-card" onClick={() => handleCategory(null)}>
+          All Products
+        </div>
       <div className="category-map">
         {categories.map(categoryItem => (
           <div
@@ -20,9 +24,6 @@ export default function ProductCategory(props) {
             {categoryItem.title}
           </div>
         ))}
-        <div className="category-card" onClick={() => handleCategory(null)}>
-          All Products
-        </div>
       </div>
     </div>
   )
