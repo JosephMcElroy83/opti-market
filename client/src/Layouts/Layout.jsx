@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import HamMenu from '../Components/HamMenu.jsx'
+import '../styling/Layout.css'
 
 export default function Layout(props) {
   const { children, currentUser, handleLogout } = props
@@ -7,20 +8,23 @@ export default function Layout(props) {
   return (
     <div>
       <header>
-        <Link to="/">
-        <h1>Opti-Market</h1>
+        <Link className="app-title-link" to="/">
+        <h1 className="app-title">Opti-Market</h1>
         </Link>
         {currentUser ? (
-          <div>
-            <p>{currentUser.username}</p>
-            <button onClick={handleLogout}>Logout</button>
+          <div className="username">
+            <div className="logged-in">
+            <p className="tags"><span id="span-logged-in">Logged in as:</span> {currentUser.username}</p>
+            </div>
+            <button className="btn" onClick={handleLogout}>Logout</button>
           </div>
         ) : (
-            <Link to='/login'>Login/Register</Link>
+            <div className="login-register">
+              <Link className="login-register-link" to='/login'>Login/Register</Link>
+            </div>
         )}
-        <hr />
         {currentUser && (
-          <div>
+          <div className="ham-menu">
             <HamMenu />
           </div>
         )}
