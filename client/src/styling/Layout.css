@@ -1,0 +1,94 @@
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0;
+  background-color: rgb(228, 228, 228);
+  height: 150px;
+  font-size: 1.3em;
+}
+
+.app-title-link {
+  color: black;
+  text-decoration: none;
+}
+
+.app-title {
+  width: 30vw;
+  display: flex;
+  font-weight: 900;
+  text-decoration: none;
+  font-size: 2.5em;
+}
+
+.username {
+  width: 20vw;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.login-register {
+  width: 30vw;
+  display: flex;
+  color: black;
+}
+
+.login-register-link, .ham-menu-link {
+  color: black;
+}
+
+
+.ham-menu {
+  display: flex;
+  width: 20vw;
+  justify-content: space-around;
+  color: black;
+}
+
+.btn {
+  align-self: center;
+  width: 60px;
+  height: 30px;
+  border-radius: 5%;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+}
+
+.btn:hover {
+  background-color: silver;
+}
+
+.logged-in {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-self: center;
+  height: 50%;
+  
+}
+
+.tags {
+  font-size: 1.1em;
+  margin: 0;
+  text-decoration: underline;
+}
+
+#span-logged-in {
+  font-size: 0.9em;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 1050px) {
+  .app-title {
+    width: 25vw;
+    font-size: 2em;
+  }
+
+  .username {
+    width: 25vw;
+    font-size: 0.9em;
+  }
+}
