@@ -35,7 +35,8 @@ export default function ProductCreate(props) {
             type="text"
             name="image"
             value={image}
-            onChange={handleChange}
+          onChange={handleChange}
+          autoFocus
           />
         </label>
         <br />
