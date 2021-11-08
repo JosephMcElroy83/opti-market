@@ -1,0 +1,4 @@
+.product-listings {
+  display: flex;
+  flex-direction: row;
+}
