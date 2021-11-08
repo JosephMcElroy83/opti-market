@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useHistory } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 export default function ProductEdit(props) {
   const [formData, setFormData] = useState({
@@ -14,7 +14,6 @@ export default function ProductEdit(props) {
   const { title, description, image, category_id, price, isFeatured, saleValue } = formData;
   const { editProduct, categories } = props;
   const { id } = useParams();
-  const history = useHistory();
 
   useEffect(() => {
     if (props.products) {
@@ -34,6 +33,7 @@ export default function ProductEdit(props) {
       }
       prefillFormData()
     }
+    //eslint-disable-next-line
   }, [props.product])
 
   const handleChange = (e) => {
@@ -58,6 +58,7 @@ export default function ProductEdit(props) {
             name="image"
             value={image}
             onChange={handleChange}
+            autoFocus
           />
         </label>
         <br />
