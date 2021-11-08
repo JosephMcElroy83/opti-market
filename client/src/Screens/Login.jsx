@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import userLogo from '../assets/username-logo.svg'
+import passLogo from  '../assets/password-logo.svg'
+import '../styling/Login.css'
 
 export default function Login(props) {
   const [formData, setFormData] = useState({
@@ -25,27 +28,41 @@ export default function Login(props) {
         e.preventDefault();
         handleLogin(formData);
       }} >
-        <label>
-          Username:
-            <input
-            name="username"
-            type="text"
-            value={username}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Password:
-            <input
-            name="password"
-            type="password"
-            value={password}
-            onChange={handleChange}
-          />
-        </label>
+        <div className="username-password-container">
+          <div className="user-div">
+            <label className="username-label">
+              <img className="user-logo" src={userLogo} alt="username-logo" />
+              <input
+                className="username-input"
+                name="username"
+                type="text"
+                placeholder="Username..."
+                value={username}
+                onChange={handleChange}
+                autoFocus
+                />
+            </label>
+          </div>
+          <div className="pass-div">
+            <label className="password-label">
+              <img className="pass-logo" src={passLogo} alt="password-logo" />
+              <input
+                className="password-input"
+                name="password"
+                type="password"
+                placeholder="Password..."
+                value={password}
+                onChange={handleChange}
+                />
+            </label>
+          </div>
+        </div>
         <hr />
-        <button>Login</button>
-        <Link to="/register">Register</Link>
+        <div className="login-register-buttons">
+          <button className="login-btn">Login</button>
+          <p>Don't have an account? Register here</p>
+          <Link className="register-link" to="/register">Register</Link>
+        </div>
       </form>
     </div>
   )
