@@ -7,6 +7,7 @@ import { readAllProducts, createProduct, updateProduct, destroyProduct} from '..
 import { getAllCategories } from '../Services/categories.js';
 import ProductEdit from '../Screens/ProductEdit';
 import ProductCategory from '../Components/ProductCategory';
+import '../styling/MainContainer.css'
 
 export default function MainContainer(props) {
   const [products, setProducts] = useState([]);
