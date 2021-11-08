@@ -1,0 +1,38 @@
+.category-container {
+  display: flex;
+  flex-direction: column;
+  width: 10vw;
+  border: 2px solid black;
+  border-radius: 0 2em 2em 0;
+}
+
+.category-map {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 90%;
+  margin-left: 4%;
+  border: 1px solid lightgray;
+  border-radius: 0 0 2em 0;
+}
+
+.category-title {
+  font-size: 1.1em;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.category-card {
+  display: flex;
+  width: 90%;
+  justify-content: space-evenly;
+  align-content: center;
+  border: 2px solid black;
+  margin-left: 2.5%;
+  margin-top: 15px;
+}
+
+.category-card:hover {
+  color: white;
+  background-color: rgb(70, 70, 70);
+}
